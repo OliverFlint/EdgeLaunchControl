@@ -3,6 +3,7 @@
 import { contextBridge, shell } from "electron";
 import fs from "node:fs";
 import { execFile } from "node:child_process";
+import { Api } from "./interfaces/Api";
 
 console.log("Preload script loading...");
 
@@ -46,7 +47,6 @@ if (process.contextIsolated) {
     console.error("Error exposing API in preload script:", e);
   }
 } else {
-  // @ts-ignore
   window.api = api;
 }
 
