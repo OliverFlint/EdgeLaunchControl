@@ -1,0 +1,43 @@
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  padding: 10px;
+}
+
+.profilesContainer {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.profileCard {
+  flex-grow: 1;
+  align-items: center;
+  max-width: 140px;
+  width: 140px;
+  height: 160px;
+  max-height: 160px;
+}
+
+.mainHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2px;
+  padding-bottom: 10px;
+}
+
+.topHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 10px;
+}
