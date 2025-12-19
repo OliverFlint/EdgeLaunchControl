@@ -10,6 +10,10 @@ import {
 import React, { useEffect, useState } from "react";
 import { FaGithub } from "react-icons/fa6";
 import { SiKofi } from "react-icons/si";
+import type { ProfileData } from "./types/ProfileData";
+import { Api } from "./interfaces/Api";
+
+declare const api: Api;
 
 export const Home = () => {
   const [profiles, setProfiles] = useState<ProfileData>();

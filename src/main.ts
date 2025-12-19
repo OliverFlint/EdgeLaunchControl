@@ -1,4 +1,4 @@
-import { app, BrowserWindow, net, protocol, session } from "electron";
+import { app, BrowserWindow, session } from "electron";
 import path from "node:path";
 import started from "electron-squirrel-startup";
 
