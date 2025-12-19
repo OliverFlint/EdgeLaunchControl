@@ -29,8 +29,6 @@ const createWindow = () => {
     );
   }
 
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools();
   mainWindow.removeMenu();
   mainWindow.setResizable(false);
 

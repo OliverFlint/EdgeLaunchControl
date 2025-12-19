@@ -48,7 +48,9 @@ export const Home = () => {
             <Link
               appearance="subtle"
               onClick={() => {
-                api.openExternal("https://www.github.com/oliverflint");
+                api.openExternal(
+                  "https://github.com/OliverFlint/EdgeLaunchControl",
+                );
               }}
             >
               <FaGithub size={20} />
