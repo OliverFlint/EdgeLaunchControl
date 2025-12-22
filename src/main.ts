@@ -1,6 +1,7 @@
 import { app, BrowserWindow, session } from "electron";
 import path from "node:path";
 import started from "electron-squirrel-startup";
+import iconUrl from "./img/icon2.png";
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
@@ -17,7 +18,7 @@ const createWindow = () => {
       nodeIntegration: true,
       nodeIntegrationInWorker: true,
     },
-    icon: path.join(__dirname, "/img/icon.png"),
+    icon: iconUrl,
   });
 
   // and load the index.html of the app.
@@ -29,6 +30,7 @@ const createWindow = () => {
     );
   }
 
+  //mainWindow.webContents.openDevTools();
   mainWindow.removeMenu();
   mainWindow.setResizable(false);
 

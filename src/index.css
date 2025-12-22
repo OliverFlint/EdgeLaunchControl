@@ -2,7 +2,15 @@ body {
   font-family:
     -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
     sans-serif;
-  padding: 10px;
+  padding: 0px;
+  margin: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.mainContainer {
+  width: 100vw;
+  height: 100vh;
 }
 
 .profilesContainer {
@@ -31,7 +39,6 @@ body {
   justify-content: flex-start;
   align-items: center;
   gap: 2px;
-  padding-bottom: 10px;
 }
 
 .topHeader {
@@ -40,4 +47,9 @@ body {
   flex-direction: row;
   justify-content: flex-end;
   gap: 10px;
+}
+
+.topHeader svg {
+  padding-top: 10px;
+  padding-right: 10px;
 }
