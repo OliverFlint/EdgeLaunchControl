@@ -1,14 +1,14 @@
 // See the Electron documentation for details on how to use preload scripts:
 // https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts
 import { contextBridge, shell } from "electron";
-import fs from "node:fs";
-import { execFile } from "node:child_process";
+import fs from "fs";
+import { execFile } from "child_process";
 import { Api } from "./interfaces/Api";
 
 console.log("Preload script loading...");
 
 const api: Api = {
-  profileRoot: window.process.env.LOCALAPPDATA,
+  profileRoot: process.env.LOCALAPPDATA,
   readfile: (path: string, encoding: BufferEncoding = "utf-8") => {
     return new Promise<string>((resolve, reject) => {
       fs.readFile(path, { encoding: encoding }, (err, data) => {
@@ -50,7 +50,7 @@ if (process.contextIsolated) {
   window.api = api;
 }
 
-console.log(window.process.platform);
-console.log(window.process.env.LOCALAPPDATA);
+console.log(process.platform);
+console.log(process.env.LOCALAPPDATA);
 
 console.log("Preload script loaded.");
