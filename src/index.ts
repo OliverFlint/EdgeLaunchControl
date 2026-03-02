@@ -40,6 +40,9 @@ const createWindow = (): void => {
   // Open the DevTools in development only.
   if (process.env.NODE_ENV === 'development') {
     mainWindow.webContents.openDevTools();
+  }else{
+    mainWindow.removeMenu();
+    mainWindow.setResizable(false);
   }
 };
 

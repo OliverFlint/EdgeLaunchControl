@@ -3,6 +3,7 @@ import { MakerSquirrel } from '@electron-forge/maker-squirrel';
 import { MakerZIP } from '@electron-forge/maker-zip';
 import { MakerDeb } from '@electron-forge/maker-deb';
 import { MakerRpm } from '@electron-forge/maker-rpm';
+import { PublisherGithub } from '@electron-forge/publisher-github';
 import { AutoUnpackNativesPlugin } from '@electron-forge/plugin-auto-unpack-natives';
 import { WebpackPlugin } from '@electron-forge/plugin-webpack';
 import { FusesPlugin } from '@electron-forge/plugin-fuses';
@@ -17,10 +18,31 @@ const config: ForgeConfig = {
   },
   rebuildConfig: {},
   makers: [
-    new MakerSquirrel({}),
+    new MakerSquirrel({
+      name: 'edgelaunchcontrol',
+      setupExe: 'edgelaunchcontrol-setup.exe',
+    }),
     new MakerZIP({}, ['darwin']),
-    new MakerRpm({}),
-    new MakerDeb({}),
+    new MakerRpm({
+      options: {
+        name: 'edgelaunchcontrol',
+      }
+    }),
+    new MakerDeb({
+      options: {
+        name: 'edgelaunchcontrol',
+        maintainer: 'Oliver Flint',
+        homepage: 'https://github.com/oliverflint/edge-launcher',
+      }
+    }),
+  ],
+  publishers: [
+    new PublisherGithub({
+      repository: {
+        owner: 'oliverflint',
+        name: 'edge-launcher',
+      },
+    }),
   ],
   plugins: [
     new AutoUnpackNativesPlugin({}),
