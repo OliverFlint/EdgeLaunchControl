@@ -32,7 +32,7 @@ const config: ForgeConfig = {
       options: {
         name: 'edgelaunchcontrol',
         maintainer: 'Oliver Flint',
-        homepage: 'https://github.com/oliverflint/edge-launcher',
+        homepage: 'https://github.com/oliverflint/EdgeLaunchControl',
       }
     }),
   ],
@@ -40,9 +40,8 @@ const config: ForgeConfig = {
     new PublisherGithub({
       repository: {
         owner: 'oliverflint',
-        name: 'edge-launcher',
+        name: 'EdgeLaunchControl',
       },
-      prerelease: true,
     }),
   ],
   plugins: [
