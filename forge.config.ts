@@ -42,6 +42,7 @@ const config: ForgeConfig = {
         owner: 'oliverflint',
         name: 'edge-launcher',
       },
+      prerelease: true,
     }),
   ],
   plugins: [
