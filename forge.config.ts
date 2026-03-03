@@ -22,19 +22,6 @@ const config: ForgeConfig = {
       name: 'edgelaunchcontrol',
       setupExe: 'edgelaunchcontrol-setup.exe',
     }),
-    new MakerZIP({}, ['darwin']),
-    new MakerRpm({
-      options: {
-        name: 'edgelaunchcontrol',
-      }
-    }),
-    new MakerDeb({
-      options: {
-        name: 'edgelaunchcontrol',
-        maintainer: 'Oliver Flint',
-        homepage: 'https://github.com/oliverflint/EdgeLaunchControl',
-      }
-    }),
   ],
   publishers: [
     new PublisherGithub({
