@@ -1,0 +1,7 @@
+{
+    "files.exclude": {
+        "**/app.asar": true
+    },
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
