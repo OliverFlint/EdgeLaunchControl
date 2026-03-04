@@ -10,7 +10,8 @@ export const mainConfig: Configuration = {
    */
   entry: './src/index.ts',
   // Put your normal webpack config below here
-  devtool: 'source-map',
+  // Enable sourcemaps only in development mode
+  devtool: process.env.NODE_ENV === 'development' ? 'source-map' : false,
   module: {
     rules,
   },

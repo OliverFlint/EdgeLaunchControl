@@ -8,9 +8,21 @@ body {
   height: 100vh;
 }
 
-.mainContainer {
+.bodyContainer {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.mainContainer {
+  width: 95vw;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
 }
 
 .profilesContainer {
@@ -37,7 +49,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   gap: 2px;
 }
 

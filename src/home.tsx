@@ -16,7 +16,7 @@ import { SiKofi } from "react-icons/si";
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 import type { ProfileData } from "./types/ProfileData";
 import { Api } from "./interfaces/Api";
-import logoUrl from "./img/logo2.1.png";
+import logoUrl from "./img/logo.png";
 
 declare const api: Api;
 
@@ -56,72 +56,80 @@ export const Home = () => {
 
   return (
     <FluentProvider theme={darkMode ? webLightTheme : webDarkTheme}>
-      <div className="mainContainer">
-        <div className="topHeader">
-          <div className="mainHeader">
-            <Image src={logoUrl} width={200} />
-          </div>
-          <div>
-            <Tooltip content="GitHub" relationship="label">
-              <Link
-                appearance="subtle"
-                onClick={() => {
-                  api.openExternal(
-                    "https://github.com/OliverFlint/EdgeLaunchControl",
-                  );
-                }}
+      <div className="bodyContainer">
+        <div className="mainContainer">
+          <div className="topHeader">
+            <div className="mainHeader">
+              <Image src={logoUrl} width={40} />
+              <h1>&nbsp;Edge Launch Control</h1>
+            </div>
+            <div>
+              <Tooltip content="GitHub" relationship="label">
+                <Link
+                  appearance="subtle"
+                  onClick={() => {
+                    api.openExternal(
+                      "https://github.com/OliverFlint/EdgeLaunchControl",
+                    );
+                  }}
+                >
+                  <FaGithub size={20} />
+                </Link>
+              </Tooltip>
+            </div>
+            <div>
+              <Tooltip
+                content="Buy me a brew (Tea/Coffee)"
+                relationship="label"
               >
-                <FaGithub size={20} />
-              </Link>
-            </Tooltip>
+                <Link
+                  appearance="subtle"
+                  onClick={() => {
+                    api.openExternal("https://ko-fi.com/oliverflint");
+                  }}
+                >
+                  <SiKofi size={20} />
+                </Link>
+              </Tooltip>
+            </div>
+            <div>
+              <Tooltip content="Dark/Light mode toggle" relationship="label">
+                <Link appearance="subtle" onClick={toggleDarkMode}>
+                  {darkMode ? (
+                    <MdOutlineLightMode size={20} />
+                  ) : (
+                    <MdDarkMode size={20} />
+                  )}
+                </Link>
+              </Tooltip>
+            </div>
           </div>
-          <div>
-            <Tooltip content="Buy me a brew (Tea/Coffee)" relationship="label">
-              <Link
-                appearance="subtle"
-                onClick={() => {
-                  api.openExternal("https://ko-fi.com/oliverflint");
-                }}
-              >
-                <SiKofi size={20} />
-              </Link>
-            </Tooltip>
-          </div>
-          <div>
-            <Tooltip content="Dark/Light mode toggle" relationship="label">
-              <Link appearance="subtle" onClick={toggleDarkMode}>
-                {darkMode ? (
-                  <MdOutlineLightMode size={20} />
-                ) : (
-                  <MdDarkMode size={20} />
-                )}
-              </Link>
-            </Tooltip>
-          </div>
-        </div>
 
-        <div className="profilesContainer">
-          {profiles?.profiles_order?.map((value, index) => {
-            return (
-              <Card
-                key={`profile_${index}`}
-                className="profileCard"
-                onClick={() => onClickHandler(value)}
-              >
-                <CardHeader
-                  header={
-                    <Text weight="bold">{profiles.info_cache[value].name}</Text>
-                  }
-                />
-                <CardPreview>
-                  <Image
-                    style={{ maxWidth: "70px" }}
-                    src={`data:image/ico;base64,${profiles.info_cache[value].avatar_icon}`}
+          <div className="profilesContainer">
+            {profiles?.profiles_order?.map((value, index) => {
+              return (
+                <Card
+                  key={`profile_${index}`}
+                  className="profileCard"
+                  onClick={() => onClickHandler(value)}
+                >
+                  <CardHeader
+                    header={
+                      <Text weight="bold">
+                        {profiles.info_cache[value].name}
+                      </Text>
+                    }
                   />
-                </CardPreview>
-              </Card>
-            );
-          })}
+                  <CardPreview>
+                    <Image
+                      style={{ maxWidth: "70px" }}
+                      src={`data:image/ico;base64,${profiles.info_cache[value].avatar_icon}`}
+                    />
+                  </CardPreview>
+                </Card>
+              );
+            })}
+          </div>
         </div>
       </div>
     </FluentProvider>

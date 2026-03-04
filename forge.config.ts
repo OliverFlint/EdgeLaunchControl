@@ -15,12 +15,14 @@ import { rendererConfig } from './webpack.renderer.config';
 const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
+    icon: './src/img/icon.ico',
   },
   rebuildConfig: {},
   makers: [
     new MakerSquirrel({
       name: 'edgelaunchcontrol',
       setupExe: 'edgelaunchcontrol-setup.exe',
+      setupIcon: './src/img/logo.ico',
     }),
   ],
   publishers: [

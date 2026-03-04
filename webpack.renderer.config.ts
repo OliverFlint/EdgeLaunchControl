@@ -9,7 +9,8 @@ rules.push({
 });
 
 export const rendererConfig: Configuration = {
-  devtool: 'source-map',
+  // Enable sourcemaps only in development mode
+  devtool: process.env.NODE_ENV === 'development' ? 'source-map' : false,
   module: {
     rules,
   },
